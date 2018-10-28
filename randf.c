@@ -1,9 +1,9 @@
-# include "rand.h"
+# include "randf.h"
 
-int random_f(){
+int random_num(){
   int randfile = open("/dev/random",O_RDONLY);
   int x;
-  unsigned int r = read(randfile,&x,sizeof(int));
+  int r = read(randfile,&x,sizeof(int));
   close(randfile);
-  return x;
+  return abs(x);
 }

@@ -1,4 +1,4 @@
-#include "rand.h"
+#include "randf.h"
 
 int main() {
   printf("Generating random numbers:\n");
@@ -6,13 +6,13 @@ int main() {
   int *check = calloc(10,sizeof(int));
   
   for (int i = 0; i < 10; i++) {
-    output[i] = rand_f();
+    output[i] = random_num();
     printf("random %d: %d\n", i, output[i]);
   }
   
   printf("------------------");
   
-  printf("Writing numbers to file\n\n");
+  printf("\nWriting numbers to file\n\n");
   int f = open("foo.txt", O_WRONLY | O_CREAT, S_IRWXU);
   if(f < 0){
     printf("open error: %s\n",strerror(errno));
@@ -26,7 +26,7 @@ int main() {
 
   printf("------------------");
   
-  printf("Reading numbers from file\n\n");
+  printf("\nReading numbers from file\n\n");
   int fd = open("foo.txt", O_RDONLY);
   if (fd < 0) {
     printf("open error: %s\n", strerror(errno));

@@ -6,5 +6,5 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include<errno.h>
-int random_f();
+int random_num();
 #endif
